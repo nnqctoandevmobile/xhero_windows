@@ -143,46 +143,48 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
               ),
             ),
             Positioned.fill(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 0),
-                    width: 80,
-                    height: 24,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 0,
-                      vertical: 0,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColor.colorRed,
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        width: 1,
-                        color: AppColor.textLightColor,
+              child: IgnorePointer(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(bottom: 0),
+                      width: 80,
+                      height: 24,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 0,
+                        vertical: 0,
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '${_rotationForCompass.toStringAsFixed(1)}\u00B0',
-                        style: TextStyle(
-                          color: AppColor.secondaryColor,
-                          fontWeight: FontWeight.bold,
+                      decoration: BoxDecoration(
+                        color: AppColor.colorRed,
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                          width: 1,
+                          color: AppColor.textLightColor,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          '${_rotationForCompass.toStringAsFixed(1)}\u00B0',
+                          style: TextStyle(
+                            color: AppColor.secondaryColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 0.75),
-                    child: Image.asset(
-                      'assets/fr_line_x_y.png',
-                      width: isWide ? width * 0.45 : width * 0.6,
+                
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0.75),
+                      child: Image.asset(
+                        'assets/fr_line_x_y.png',
+                        width: isWide ? width * 0.45 : width * 0.6,
+                      ),
                     ),
-                  ),
-                  spaceVertical(24.5),
-                ],
+                    spaceVertical(24.5),
+                  ],
+                ),
               ),
             ),
 

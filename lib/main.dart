@@ -3,7 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
-import 'home_page.dart';
+import 'page/home/home_page.dart';
 import 'lang/translation_service.dart';
 
 void main() {

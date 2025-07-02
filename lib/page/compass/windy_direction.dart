@@ -60,8 +60,7 @@ class _WindDirectionScreenState extends State<WindDirectionScreen> {
     'satellite_map',
   ];
   Future<String> getAddressFromLatLngFinal(double lat, double lng) async {
-    String apiKey =
-        "AIzaSyAtU1dcmkxSmt4yUDlR7A3liYHr4skxcFc"; // Thay bằng API key của bạn
+    String apiKey = ""; // Thay bằng API key của bạn
     String url =
         "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&key=$apiKey";
 

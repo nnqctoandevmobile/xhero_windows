@@ -203,7 +203,7 @@ class _SeachLocationScreenState extends State<SeachLocationScreen> {
   Future<List<String>> fetchAddressSuggestions(String input) async {
     final response = await http.get(
       Uri.parse(
-        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&components=country:vn&key=AIzaSyAtU1dcmkxSmt4yUDlR7A3liYHr4skxcFc',
+        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&components=country:vn&key=',
       ),
     );
 

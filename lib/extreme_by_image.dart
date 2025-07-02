@@ -11,6 +11,8 @@ import 'dart:math' as math;
 
 import 'package:xhero_windows_app/constants/colors.dart';
 
+import 'utils/logic/xhero_common_logics.dart';
+
 class ExtremeByImage extends StatefulWidget {
   final String fileUrl;
   const ExtremeByImage({super.key, required this.fileUrl});
@@ -402,8 +404,6 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [0, 90, 180, 270, 360].map((angle) {
-                            final bool isSelected =
-                                (_rotationForImage.toInt() == angle);
                             return GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -737,7 +737,7 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                               XFile(imageFile.path),
                             ], text: 'Lập cực từ Xhero');
                           } catch (e) {
-                            print('Chụp ảnh lỗi: $e');
+                            printConsole('Chụp ảnh lỗi: $e');
                           }
                         },
                         child: Container(

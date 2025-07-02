@@ -475,8 +475,7 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
   }
 
   Future<String> getAddressFromLatLngFinal(double lat, double lng) async {
-    String apiKey =
-        ""; // Thay bằng API key của bạn
+    String apiKey = ""; // Thay bằng API key của bạn
     String url =
         "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&key=$apiKey";
 
@@ -656,7 +655,6 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
     final containerWidth = screenWidth > 1000
         ? screenWidth * 0.6
         : screenWidth > 600
@@ -2154,46 +2152,6 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
                                           zfold: 32,
                                           tablet: 32,
                                           context: context,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 2),
-                                  onTapWidget(
-                                    onTap: () {},
-                                    child: Container(
-                                      width: optimizedSize(
-                                        phone: 28,
-                                        zfold: 32,
-                                        tablet: 32,
-                                        context: context,
-                                      ),
-                                      height: optimizedSize(
-                                        phone: 28,
-                                        zfold: 32,
-                                        tablet: 32,
-                                        context: context,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: AppColor.blackColor,
-                                        shape: BoxShape.circle,
-                                        border: GradientBoxBorder(
-                                          gradient: LinearGradient(
-                                            colors: CommonConstants
-                                                .gradientBGCodeRefferal,
-                                          ),
-                                        ),
-                                      ),
-                                      child: GradientIcon(
-                                        icon: Icons.view_in_ar,
-                                        size: optimizedSize(
-                                          phone: 20,
-                                          zfold: 22,
-                                          tablet: 22,
-                                          context: context,
-                                        ),
-                                        gradient: const LinearGradient(
-                                          colors: CommonConstants.button,
                                         ),
                                       ),
                                     ),

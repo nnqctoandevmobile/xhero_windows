@@ -708,7 +708,7 @@ class SearchHistoryScreen extends StatefulWidget {
 }
 
 class _SearchHistoryScreenState extends State<SearchHistoryScreen> {
-  List<LocationModel> _searchHistory = [];
+  List<LocationModel> searchHistory = [];
 
   @override
   void initState() {
@@ -721,9 +721,9 @@ class _SearchHistoryScreenState extends State<SearchHistoryScreen> {
       appBar: AppBar(title: const Text('Search History')),
       body: ListView.builder(
         physics: const BouncingScrollPhysics(),
-        itemCount: _searchHistory.length,
+        itemCount: searchHistory.length,
         itemBuilder: (context, index) {
-          final location = _searchHistory[index];
+          final location = searchHistory[index];
           return ListTile(
             title: Text(location.name),
             subtitle: Text('Lat: ${location.lat}, Lng: ${location.long}'),

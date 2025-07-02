@@ -114,6 +114,9 @@ flutter:
     - family: Mulish
       fonts:
         - asset: font/Mulish-Medium.ttf
+    - family: ExtraBold
+      fonts:
+        - asset: font/ExtraBold.ttf
     - family: MuseoModerno
       fonts:
         - asset: font/MuseoModerno-Thin.ttf

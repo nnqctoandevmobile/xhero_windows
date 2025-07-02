@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:xhero_windows_app/utils/logic/common_widget.dart';
 
 import '../../../constants/common.dart';
@@ -23,7 +24,7 @@ class MenuItem extends StatelessWidget {
           Image.asset(menu.icon, width: 100, height: 100, fit: BoxFit.contain),
           const SizedBox(height: 12),
           GradientTextWithStrokeMenu(
-            text: capitalForText(menu.title),
+            text: capitalForText(menu.title.tr),
             strokeWidth: 1,
             maxline: 2,
             fontSize: optimizedSize(

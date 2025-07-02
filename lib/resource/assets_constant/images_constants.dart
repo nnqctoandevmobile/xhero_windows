@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class ImageConstants {
   //general
   static const String img_bg_map_action_hoz =

@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class FrameConstants {
   static const String fr_compass_satellite_en =
       'lib/resource/assets_resources/frames/fr_compass_satellite_en.png';

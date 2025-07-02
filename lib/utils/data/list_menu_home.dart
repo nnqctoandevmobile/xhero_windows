@@ -4,27 +4,27 @@ import '../model/menu_item_model.dart';
 List<MenuItemModel> lstMenuLocal = [
   MenuItemModel(
     id: '1',
-    title: 'La Kinh Lập Cực',
+    title: 'extreme_compass',
     icon: IconConstants.ic_extreme_compass,
   ),
   MenuItemModel(
     id: '2',
-    title: 'La Kinh Vệ Tinh',
+    title: 'satellite_compass',
     icon: IconConstants.ic_satellite_compass,
   ),
   MenuItemModel(
     id: '3',
-    title: 'Bản Đồ Gió',
+    title: 'windy_map_title',
     icon: IconConstants.ic_windy_gradient,
   ),
   MenuItemModel(
     id: '3',
-    title: 'Bản Đồ Địa Hình',
-    icon: IconConstants.ic_windy_gradient,
+    title: 'terrain_compass',
+    icon: IconConstants.ic_menu_compass,
   ),
   MenuItemModel(
     id: '4',
-    title: 'Xem Ngày',
+    title: 'date_view',
     icon: IconConstants.ic_auspicious_home_menu,
   ),
 ];

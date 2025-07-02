@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:xhero_windows_app/page/home/widget/menu_item.dart';
 
 import '../../constants/common.dart';
-import '../../extreme_by_image.dart';
 import '../../shared/multi_appear_widgets/gradient_text_menu_stroke_gradient.dart';
 import '../../utils/data/list_menu_home.dart';
 import '../../utils/logic/xhero_common_logics.dart';
@@ -101,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       GradientTextWithStrokeMenu(
                         text: capitalForText(
-                          'Danh sách tính năng'.tr.toUpperCase(),
+                          'list_of_features'.tr.toUpperCase(),
                         ),
                         strokeWidth: 1,
                         maxline: 2,

@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class IconConstants {
   // auspicious
   static const String ic_auspicious_home_menu =

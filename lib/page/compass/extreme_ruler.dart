@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -115,15 +113,15 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
   }
 
   // Biến điều khiển zoom/kéo của thanh chỉ đỏ
-  double _overlayScale = 1.0;
-  Offset _overlayOffset = Offset.zero;
+  double overlayScale = 1.0;
+  Offset overlayOffset = Offset.zero;
 
   // Biến điều khiển zoom/kéo của ảnh
   double _imageScale = 1.0;
   Offset _imageOffset = Offset.zero;
   // Thiết lập giới hạn zoom cho ảnh và overlay
-  final double _minScale = 0.5; // Minimum scale factor
-  final double _maxScale = 3.0; // Maximum scale factor
+  final double minScale = 0.5; // Minimum scale factor
+  final double maxScale = 3.0; // Maximum scale factor
   @override
   Widget build(BuildContext context) {
     return ShowCaseWidget(
@@ -408,8 +406,8 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                                           onTapWidget(
                                             onTap: () {
                                               setState(() {
-                                                _overlayOffset = Offset.zero;
-                                                _overlayScale = 1;
+                                                overlayOffset = Offset.zero;
+                                                overlayScale = 1;
                                                 _imageOffset = Offset.zero;
                                                 _imageScale = 1;
                                                 _rotationForImage = 0;
@@ -1165,7 +1163,7 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                   ),
                 ],
               ),
-              titleAppbar: 'extreme_ruler'.tr,
+              titleAppbar: capitalForText('extreme_ruler'.tr),
             ),
           ),
         );
@@ -1284,7 +1282,7 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                               child: TextField(
                                 controller: _controller,
                                 cursorColor: AppColor.secondaryColor,
-                                cursorHeight: 24,
+                                cursorHeight: 16,
                                 keyboardType:
                                     const TextInputType.numberWithOptions(
                                       decimal: true,
@@ -1378,10 +1376,9 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                                       ],
                                     ),
                                   ),
-                                  contentPadding: const EdgeInsets.only(
-                                    top: 6,
-                                    bottom: 3,
-                                    left: 0,
+                                  contentPadding: const EdgeInsets.symmetric(
+                                    horizontal: 0,
+                                    vertical: 12,
                                   ),
                                   isDense: true,
                                   hintText: 'enter_your_degree'.tr,
@@ -1406,7 +1403,8 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                                 },
                                 onChanged: (String v) {
                                   setState(() {
-                                    _controller.text = v;
+                                    hasText = v
+                                        .isNotEmpty; // ✅ nếu bạn cần check trạng thái nhập
                                   });
                                 },
                               ),

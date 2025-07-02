@@ -55,7 +55,7 @@ class CommonWidget {
 
   static Future<void> snackBar(String error) async {
     Get.snackbar(
-      'error'.tr,
+      'error_system'.tr,
       error,
       backgroundColor: AppColor.colorRed,
       snackPosition: SnackPosition.BOTTOM,

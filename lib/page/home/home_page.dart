@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     } else if (index == 3) {
                                       // la kinh địa hình
                                       html.window.open(
-                                        'https://vothanhthe.github.io/cesium-map-static-web/',
+                                        'https://vothanhthe.github.io/terrain_compass_chrome/',
                                         '_cesium',
                                       );
                                     } else if (index == 4) {

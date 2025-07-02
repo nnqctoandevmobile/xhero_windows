@@ -1,14 +1,19 @@
 import 'dart:math' as math;
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xhero_windows_app/page/home/widget/menu_item.dart';
 
 import '../../constants/common.dart';
+import '../../extreme_by_image.dart';
 import '../../shared/multi_appear_widgets/gradient_text_menu_stroke_gradient.dart';
 import '../../utils/data/list_menu_home.dart';
 import '../../utils/logic/xhero_common_logics.dart';
 import 'dart:html' as html;
+
+import '../compass/extreme_ruler.dart';
+import '../compass/satellite_compass_map.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -165,17 +170,27 @@ class _MyHomePageState extends State<MyHomePage> {
                                   menu: menu,
                                   onTap: () {
                                     if (index == 0) {
-                                      //
+                                      // la kinh lập cực
+                                      pickImageAndNavigate();
                                     } else if (index == 1) {
-                                      //
+                                      // bản đồ vệ tinh
+                                      Get.to(
+                                        () => SatelliteCompassMap(
+                                          degreeFromCompas: 0,
+                                        ),
+                                      );
                                     } else if (index == 2) {
                                       // bản đồ gió
                                       html.window.open(
                                         'https://www.msn.com/vi-vn/weather/maps/wind',
-                                        '_blank',
+                                        '_windy',
                                       );
                                     } else if (index == 3) {
-                                      //
+                                      // la kinh địa hình
+                                      html.window.open(
+                                        'https://vothanhthe.github.io/cesium-map-static-web/',
+                                        '_cesium',
+                                      );
                                     } else if (index == 4) {
                                       //
                                     }
@@ -195,5 +210,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  void pickImageAndNavigate() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+      allowMultiple: false,
+      withData: true, // cần dòng này để lấy bytes
+    );
+
+    if (result != null && result.files.single.bytes != null) {
+      final bytes = result.files.single.bytes!;
+      final blob = html.Blob([bytes]);
+      final url = html.Url.createObjectUrlFromBlob(blob);
+      printConsole("URL: $url");
+
+      Get.to(() => ExtremeRulerScreen(imageUrl: url));
+    }
   }
 }

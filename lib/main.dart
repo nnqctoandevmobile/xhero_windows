@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
+import 'page/compass/satellite_compass_map.dart';
 import 'page/home/home_page.dart';
 import 'lang/translation_service.dart';
 
@@ -22,7 +23,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => const MyHomePage(title: 'Flutter Demo Home Page'),
+        ),
+        GetPage(
+          name: '/SatelliteCompassMap',
+          page: () => SatelliteCompassMap(degreeFromCompas: 0),
+        ),
+      ],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

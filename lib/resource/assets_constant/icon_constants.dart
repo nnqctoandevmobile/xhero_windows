@@ -87,4 +87,18 @@ class IconConstants {
       'lib/resource/assets_resources/icons/ic_edit_light.svg';
   static const String ic_satellite_gradient =
       'lib/resource/assets_resources/icons/ic_satellite_gradient.svg';
+  static const String ic_check_date =
+      'lib/resource/assets_resources/icons/ic_check_date.png';
+  static const String ic_menu_incense_n_lamps =
+      'lib/resource/assets_resources/icons/ic_menu_incense_n_lamps.png';
+  static const String ic_expert_gradient =
+      'lib/resource/assets_resources/icons/ic_expert_gradient.png';
+  static const String ic_time_white =
+      'lib/resource/assets_resources/icons/ic_time_white.svg';
+  static const String ic_star_red =
+      'lib/resource/assets_resources/icons/ic_star_red.svg';
+  static const String ic_refresh_today =
+      'lib/resource/assets_resources/icons/ic_refresh_today.svg';
+  static const String ic_close_gradient =
+      'lib/resource/assets_resources/icons/ic_close_gradient.png';
 }

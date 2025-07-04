@@ -13,6 +13,7 @@ import 'dart:html' as html;
 
 import '../compass/extreme_ruler.dart';
 import '../compass/satellite_compass_map.dart';
+import '../date_view/view/auspicious_day_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -167,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 final menu = lstMenuLocal[index];
                                 return MenuItem(
                                   menu: menu,
-                                  onTap: () {
+                                  onTap: () async {
                                     if (index == 0) {
                                       // la kinh lập cực
                                       pickImageAndNavigate();
@@ -191,8 +192,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                         '_cesium',
                                       );
                                     } else if (index == 4) {
-                                      //
+                                      // Xem ngày
+                                      // Get.to(() => DateViewScreen());
                                     }
+                                    Get.to(
+                                      () => AuspicoiusDayScreen(
+                                        // uiRepository: uiRepository,
+                                        id: '66665cc0fd3ad5ab560d9f39',
+                                        isShowBackBtn: true,
+                                      ),
+                                    );
                                   },
                                 );
                               }),

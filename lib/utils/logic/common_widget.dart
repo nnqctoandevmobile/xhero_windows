@@ -63,6 +63,20 @@ class CommonWidget {
   }
 }
 
+Map<String, String> dayMap = {
+  'mon': 'monday',
+  'tue': 'tuesday',
+  'wed': 'wednesday',
+  'thu': 'thursday',
+  'fri': 'friday',
+  'sat': 'saturday',
+  'sun': 'sunday',
+};
+
+String parseDay(String abbreviation) {
+  return dayMap[abbreviation.toLowerCase()] ?? 'Unknown';
+}
+
 Widget onTapWidget({
   required Widget child,
   double radius = 0.0,
@@ -87,6 +101,70 @@ double heightFlexible(double designHeight) {
 
 double getResponsiveWidth(BuildContext context) {
   return MediaQuery.of(context).size.width > 500 ? (Get.width) : Get.width;
+}
+
+// Get the zodiac image path based on the zodiac number
+String getZodiacImage(int zodiacNumber) {
+  return CommonConstants.zodiacMapIcons[zodiacNumber] ?? '';
+}
+
+// Get color based on element key from constants
+Color getColorByElement(String key) {
+  return CommonConstants.colorOf5Elements[key] ?? AppColor.primaryColor;
+}
+
+
+// Format hour to HH:00 format
+String formatHourSecond(int hour) {
+  if (hour < 0 || hour > 23) {
+    throw ArgumentError('Hour must be between 0 and 23');
+  }
+
+  String formattedHour = hour.toString().padLeft(2, '0');
+  return '$formattedHour:00';
+}
+
+Widget buildRichText(
+    String truc, String tu, String tiet, BuildContext context) {
+  return RichText(
+    text: TextSpan(
+      text: '${'truc'.tr} ',
+      style: TextAppStyle().titleStyle().copyWith(
+            fontSize: 16.0,
+          ),
+      children: [
+        TextSpan(
+            text: truc.tr,
+            style: TextAppStyle().titleStyle().copyWith(
+                  color: AppColor.textBrownColor,
+                  fontSize: 16.0,
+                )),
+        TextSpan(
+            text: ', ${'tu'.tr} ',
+            style: TextAppStyle().titleStyle().copyWith(
+                  fontSize: 16.0,
+                )),
+        TextSpan(
+            text: tu.tr,
+            style: TextAppStyle().titleStyle().copyWith(
+                  color: AppColor.textBrownColor,
+                  fontSize: 16.0,
+                )),
+        TextSpan(
+          text: ', ${'tiet'.tr} ',
+          style: TextAppStyle().titleStyle().copyWith(
+                fontSize: 16.0,
+              ),
+        ),
+        TextSpan(
+            text: tiet.tr,
+            style: TextAppStyle().titleStyle().copyWith(
+                  color: AppColor.textBrownColor,
+                  fontSize: 16.0,
+                )),
+      ],
+    ),
+  );
 }
 
 Widget loadingLogoState() {

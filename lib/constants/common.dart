@@ -311,8 +311,6 @@ class CommonConstants {
   ];
 
   static List<Color> titleCategoryGradient = [
-    const Color(0xFF8A4026),
-    const Color(0xFF966D32),
     const Color(0xFFA78041),
     const Color(0xFFBA9653),
     const Color(0xFFD8B870),
@@ -325,14 +323,10 @@ class CommonConstants {
     const Color(0xFFDDB258),
     const Color(0xFFE4BD61),
     const Color(0xFFF4D576),
-    const Color(0xFFFDF4B8),
-    const Color(0xFFF2DF7B),
     const Color(0xFFF8E4A2),
     const Color(0xFFFBE194),
     const Color(0xFFF0D35A),
-    const Color(0xFFFDEFA8),
     const Color(0xFFDAC771),
-    const Color(0xFFFFF2BD),
     const Color(0xFFD2A744),
     const Color(0xFFEAC565),
     const Color(0xFFDCB755),
@@ -379,12 +373,6 @@ class CommonConstants {
     const Color(0xFFFFC23F),
     const Color(0xFFB07520),
     const Color(0xFFBF9700),
-    const Color(0xFFF0DFAC),
-    const Color(0xFFE7D18B),
-    const Color(0xFFD8BC5A),
-    const Color(0xFFD4B549),
-    const Color(0xFFD0B03D),
-    const Color(0xFFCEAD36),
     const Color(0xFFCEAD35),
     const Color(0xFFFFC23F),
   ];

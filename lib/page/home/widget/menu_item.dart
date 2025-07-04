@@ -28,9 +28,9 @@ class MenuItem extends StatelessWidget {
             strokeWidth: 1,
             maxline: 2,
             fontSize: optimizedSize(
-              phone: 16,
-              zfold: 18,
-              tablet: 20,
+              phone: 20,
+              zfold: 22,
+              tablet: 24,
               context: context,
             ),
             textGradient: LinearGradient(
@@ -45,6 +45,7 @@ class MenuItem extends StatelessWidget {
               stops: CommonConstants.stopsStrokeCategoryGradient,
             ),
             style: const TextStyle(
+              fontSize: 20,
               inherit: true,
               letterSpacing: 0.6,
               height: 1.2,
@@ -56,11 +57,7 @@ class MenuItem extends StatelessWidget {
                   color: Color(0xff412C04),
                   blurRadius: 5,
                 ),
-                Shadow(
-                  offset: Offset(-0.6, 0.5),
-                  color: Color(0xff825400),
-                  blurRadius: 5,
-                ),
+               
               ],
             ),
           ),

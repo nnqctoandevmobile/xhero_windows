@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -174,10 +176,12 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
                                           _rotationForImage *
                                           3.14159 /
                                           180, // Convert degrees to radians
-                                      child: Image.network(
-                                        widget.imageUrl,
-                                        fit: BoxFit.fill,
-                                      ),
+                                      child:
+                                     Image.file(File(widget.imageUrl)) 
+                                      //  Image.network(
+                                      //   widget.imageUrl,
+                                      //   fit: BoxFit.fill,
+                                      // ),
                                     ),
                                   ),
                                 ),

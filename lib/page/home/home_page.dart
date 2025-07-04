@@ -12,6 +12,7 @@ import '../../utils/logic/xhero_common_logics.dart';
 
 import '../compass/extreme_ruler.dart';
 import '../compass/satellite_compass_map.dart';
+import '../date_view/view/auspicious_day_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -155,57 +156,76 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context, constraints) {
                             int crossAxisCount = (constraints.maxWidth ~/ 200)
                                 .clamp(2, 5); // auto responsive
-                            return GridView.count(
-                              crossAxisCount: crossAxisCount,
-                              mainAxisSpacing: 16,
-                              crossAxisSpacing: 16,
-                              childAspectRatio: 1.2,
-                              children: List.generate(lstMenuLocal.length, (
-                                index,
-                              ) {
-                                final menu = lstMenuLocal[index];
-                                return MenuItem(
-                                  menu: menu,
-                                  onTap: () async {
-                                    if (index == 0) {
-                                      // la kinh lập cực
-                                      pickImageAndNavigate();
-                                    } else if (index == 1) {
-                                      // bản đồ vệ tinh
+                            return Center(
+                              child: GridView.count(
+                                shrinkWrap: true,
+                                crossAxisCount: crossAxisCount,
+                                mainAxisSpacing: 16,
+                                crossAxisSpacing: 16,
+                                childAspectRatio: 1.2,
+                                children: List.generate(lstMenuLocal.length, (
+                                  index,
+                                ) {
+                                  final menu = lstMenuLocal[index];
+                                  return MenuItem(
+                                    menu: menu,
+                                    onTap: () async {
+                                      if (index == 0) {
+                                        // la kinh lập cực
+                                        pickImageAndNavigate();
+                                        return;
+
+                                      } else if (index == 1) {
+                                        // bản đồ vệ tinh
+                                        Get.to(
+                                          () => SatelliteCompassMap(
+                                            degreeFromCompas: 0,
+                                          ),
+                                        );
+                                        return;
+                                      } else if (index == 2) {
+                                        try {
+                                          await launchUrl(
+                                            Uri.parse(
+                                              'https://www.msn.com/vi-vn/weather/maps/wind',
+                                            ),
+                                            mode: LaunchMode.inAppBrowserView,
+                                          );
+                                        } catch (e) {
+                                          printConsole('can not launch: $e');
+                                        }
+                                        return;
+
+                                      } else if (index == 3) {
+                                         try {
+                                          await launchUrl(
+                                            Uri.parse(
+                                              'https://vothanhthe.github.io/terrain_compass_chrome/',
+                                            ),
+                                            mode: LaunchMode.inAppBrowserView,
+                                          );
+                                        } catch (e) {
+                                          printConsole('can not launch: $e');
+                                        }
+                                        return;
+                                     
+                                      } else if (index == 4) {
+                                        // Xem ngày
+                                        // Get.to(() => DateViewScreen());
+                                      }
                                       Get.to(
-                                        () => SatelliteCompassMap(
-                                          degreeFromCompas: 0,
+                                        () => AuspicoiusDayScreen(
+                                          // uiRepository: uiRepository,
+                                          id: '66665cc0fd3ad5ab560d9f39',
+                                          isShowBackBtn: true,
                                         ),
                                       );
-                                    } else if (index == 2) {
-                                      try {
-                                        await launchUrl(
-                                          Uri.parse(
-                                            'https://www.msn.com/vi-vn/weather/maps/wind',
-                                          ),
-                                          mode: LaunchMode.inAppBrowserView,
-                                        );
-                                      } catch (e) {
-                                        printConsole('can not launch: $e');
-                                      }
-                                    } else if (index == 3) {
-                                       try {
-                                        await launchUrl(
-                                          Uri.parse(
-                                            'https://vothanhthe.github.io/terrain_compass_chrome/',
-                                          ),
-                                          mode: LaunchMode.inAppBrowserView,
-                                        );
-                                      } catch (e) {
-                                        printConsole('can not launch: $e');
-                                      }
-                                   
-                                    } else if (index == 4) {
-                                      //
-                                    }
-                                  },
-                                );
-                              }),
+                                        return;
+
+                                    },
+                                  );
+                                }),
+                              ),
                             );
                           },
                         ),

@@ -26,7 +26,7 @@ class BodyWithBackgroundLight extends StatelessWidget {
             width: Get.width,
             height: Get.height,
             color: AppColor.grayTextBoldColor,
-            child: Image.asset('background.png', fit: BoxFit.cover),
+            child: Image.asset('assets/background.png', fit: BoxFit.cover),
           ),
         Container(
           width: Get.width,

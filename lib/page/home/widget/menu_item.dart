@@ -16,12 +16,17 @@ class MenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final width = MediaQuery.of(context).size.width;
+    final isWide = width > 800;
     return onTapWidget(
       onTap: onTap,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(menu.icon, width: 100, height: 100, fit: BoxFit.contain),
+          Image.asset(menu.icon, width:
+          !isWide?60:
+           100, height:   !isWide?60:
+           100, fit: BoxFit.contain),
           const SizedBox(height: 12),
           GradientTextWithStrokeMenu(
             text: capitalForText(menu.title.tr),
@@ -50,7 +55,7 @@ class MenuItem extends StatelessWidget {
               letterSpacing: 0.6,
               height: 1.2,
               fontFamily: 'UTM-Bitsumishi-Pro',
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w400,
               shadows: [
                 Shadow(
                   offset: Offset(0, 1),

@@ -227,7 +227,7 @@ class _SeachLocationScreenState extends State<SeachLocationScreen> {
         FocusScope.of(context).unfocus();
       },
       child: BodyWithBackgroundLight(
-        background: 'background.png',
+        background: 'assets/background.png',
         child: Container(
           padding: const EdgeInsets.only(right: 20, left: 20),
           child: Column(

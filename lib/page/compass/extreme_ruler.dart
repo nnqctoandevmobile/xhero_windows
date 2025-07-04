@@ -139,7 +139,7 @@ class _ExtremeRulerScreenState extends State<ExtremeRulerScreen> {
           child: Screenshot(
             controller: screenshotController,
             child: frameCommonWidget(
-              background: 'background.png',
+              background: 'assets/background.png',
               onTap: () {
                 Get.back(result: '');
               },

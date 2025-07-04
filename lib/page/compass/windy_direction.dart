@@ -151,7 +151,7 @@ class _WindDirectionScreenState extends State<WindDirectionScreen> {
     return Stack(
       children: [
         frameCommonWidget(
-          background: 'background.png',
+          background: 'assets/background.png',
           isShowAction: true,
           onTap: () async {
             Get.back();

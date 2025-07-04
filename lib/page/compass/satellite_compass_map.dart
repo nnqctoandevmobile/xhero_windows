@@ -683,7 +683,7 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
                   child: Stack(
                     children: [
                       BodyWithBackgroundLight(
-                        background: 'background.png',
+                        background: 'assets/background.png',
                         child: Container(
                           width: Get.width - 0,
                           height: Get.height,
@@ -692,7 +692,7 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
                             top: 148,
                             bottom: 120,
                           ),
-                          child: Image.asset('img_map_vn.png'),
+                          child: Image.asset('assets/img_map_vn.png'),
                         ),
                       ),
                       Container(
@@ -733,34 +733,37 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
                   child: SizedBox(
                     child: Stack(
                       children: [
-                        SizedBox(
-                          child: GoogleMap(
-                            scrollGesturesEnabled: _scrollGesturesEnabled,
-                            mapType: _getGoogleMapType(_currentMapType),
-                            zoomControlsEnabled: false,
-                            zoomGesturesEnabled: true,
-                            myLocationButtonEnabled: false,
-                            myLocationEnabled: true,
-                            onCameraMove: _onCameraMove,
-                            rotateGesturesEnabled: _isTurnMap,
-                            onCameraIdle: _onCameraIdle,
-                            trafficEnabled: false,
-                            buildingsEnabled: false,
-                            indoorViewEnabled: false,
-                            markers: Set<Marker>.of(_markers),
-                            //  markers: _myLocationMarker != null ? {_myLocationMarker!} : {},
-                            initialCameraPosition: CameraPosition(
-                              target: _currentPosition!,
-                              zoom: 19.0,
-                              // tilt: 45,
-                              bearing: 0,
-                            ),
-                            onMapCreated:
-                                (GoogleMapController controller) async {
-                                  _controller = controller;
-                                  _mapController = controller;
-                                },
-                          ),
+                        Container(
+                          width: Get.width,
+                          height: Get.height,
+                          color:Colors.black
+                          // child: GoogleMap(
+                          //   scrollGesturesEnabled: _scrollGesturesEnabled,
+                          //   mapType: _getGoogleMapType(_currentMapType),
+                          //   zoomControlsEnabled: false,
+                          //   zoomGesturesEnabled: true,
+                          //   myLocationButtonEnabled: false,
+                          //   myLocationEnabled: true,
+                          //   onCameraMove: _onCameraMove,
+                          //   rotateGesturesEnabled: _isTurnMap,
+                          //   onCameraIdle: _onCameraIdle,
+                          //   trafficEnabled: false,
+                          //   buildingsEnabled: false,
+                          //   indoorViewEnabled: false,
+                          //   markers: Set<Marker>.of(_markers),
+                          //   //  markers: _myLocationMarker != null ? {_myLocationMarker!} : {},
+                          //   initialCameraPosition: CameraPosition(
+                          //     target: _currentPosition!,
+                          //     zoom: 19.0,
+                          //     // tilt: 45,
+                          //     bearing: 0,
+                          //   ),
+                          //   onMapCreated:
+                          //       (GoogleMapController controller) async {
+                          //         _controller = controller;
+                          //         _mapController = controller;
+                          //       },
+                          // ),
                         ),
                         if (!isCapturing)
                           Positioned(child: _buildMapHeader(ctx)),
@@ -1069,6 +1072,16 @@ class SatelliteCompassMapState extends State<SatelliteCompassMap> {
                                   ),
                                 ),
                               ),
+                              Positioned.fill(child: Align(alignment: Alignment.bottomCenter,child: Container(
+                                margin: EdgeInsets.only(bottom: 8),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(24),
+                                  border: Border.all(width: 1,color: AppColor.colorRed),
+                                  color: AppColor.colorRed.withAlpha(40)
+                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 32,vertical: 12),
+                                child: Text('Bản đồ Google Map hiện đang không khả dụng trên thiết bị này',style: TextStyle(fontSize: 14,color: Colors.red),),
+                              ),)),
                         if (!isCapturing)
                           Positioned(
                             bottom: 24,

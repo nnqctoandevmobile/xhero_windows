@@ -34,4 +34,20 @@ class ImageConstants {
       'lib/resource/assets_resources/images/img_watermask_xhero.png';
   static const String img_bg_dainam_trans =
       'lib/resource/assets_resources/images/img_bg_dainam_trans.png';
+  static const String img_bg_result_important =
+      'lib/resource/assets_resources/images/img_bg_result_important.png';
+  static const String img_bg_manage_book_expert =
+      'lib/resource/assets_resources/images/img_bg_manage_book_expert.png';
+  static const String img_bg_events_year =
+      'lib/resource/assets_resources/images/img_bg_events_year.png';
+  static const String img_bg_home_pray =
+      'lib/resource/assets_resources/images/img_bg_home_pray.png';
+  static const String img_bg_worship_ancestors =
+      'lib/resource/assets_resources/images/img_bg_worship_ancestors.png';
+  static const String img_bg_life_cycle =
+      'lib/resource/assets_resources/images/img_bg_life_cycle.png';
+  static const String img_bg_worship_procedures =
+      'lib/resource/assets_resources/images/img_bg_worship_procedures.png';
+  static const String img_bg_extend_important =
+      'lib/resource/assets_resources/images/img_bg_extend_important.png';
 }

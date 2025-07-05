@@ -9,4 +9,6 @@ class ButtonConstants {
       'lib/resource/assets_resources/buttons/btn_small_primary_active.png';
   static const String btn_pu_error =
       'lib/resource/assets_resources/buttons/btn_pu_error.png';
+  static const String btn_large_primary_active =
+      'lib/resource/assets_resources/buttons/btn_large_primary_active.png';
 }

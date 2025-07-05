@@ -30,6 +30,8 @@ import '../../../utils/logic/common_widget.dart';
 import '../../../utils/logic/xhero_common_logics.dart';
 import 'package:http/http.dart' as http;
 
+import '../components/form_important_day.dart';
+import '../components/important_day_lobby.dart';
 import '../model/calendar_model.dart';
 
 class AuspicoiusDayScreen extends StatefulWidget {
@@ -795,24 +797,9 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
           right: 24,
           child: onTapWidget(
             onTap: () {
-              // Get.toNamed(Routes.MYEVENT)?.then((v) {
-              //   if (v == true) {
-              //     _isLoading = true;
-              //     getLunarHour(
-              //         day: _focusedDay.day,
-              //         month: _focusedDay.month,
-              //         year: _focusedDay.year);
-              //     timeRequest = DateFormat('dd/MM/yyyy').format(_focusedDay);
-
-              //     _getCalendar(timeRequest, dayRequest);
-              //     _selectedDay = _focusedDay;
-              //     _initLunarDay();
-              //     displayYear = year;
-              //     days = _generateDays(year, month);
-              //     displayMonth = month;
-              //     _generateLunarDates();
-              //   }
-              // });
+              Get.to(() => CheckingTheDayScreen(
+                                  id: '665ea8195ea03b2014cb5ec7',
+                                ));
             },
             child: Center(
               child: Row(

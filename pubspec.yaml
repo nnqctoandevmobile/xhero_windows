@@ -94,6 +94,7 @@ flutter:
     - lib/resource/assets_resources/popups/
     - lib/resource/assets_resources/zodiacs/
     - lib/resource/assets_resources/frames/
+    - lib/resource/assets_resources/buttons/
     - font/
 
   # An image asset can refer to one or more resolution-specific "variants", see

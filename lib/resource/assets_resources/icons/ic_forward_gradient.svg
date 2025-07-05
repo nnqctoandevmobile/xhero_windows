@@ -1,0 +1,43 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="paint0_linear_639_21731" x1="-2.57714" y1="-15.1658" x2="11.6621" y2="24.5481" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8A4026"/>
+<stop offset="0.01" stop-color="#966D32"/>
+<stop offset="0.03" stop-color="#A78041"/>
+<stop offset="0.04" stop-color="#BA9653"/>
+<stop offset="0.08" stop-color="#D8B870"/>
+<stop offset="0.09" stop-color="#E4C67B"/>
+<stop offset="0.12" stop-color="#DBB565"/>
+<stop offset="0.13" stop-color="#D9B160"/>
+<stop offset="0.16" stop-color="#D2A550"/>
+<stop offset="0.18" stop-color="#D0A14B"/>
+<stop offset="0.21" stop-color="#D5A750"/>
+<stop offset="0.24" stop-color="#DDB258"/>
+<stop offset="0.27" stop-color="#E4BD61"/>
+<stop offset="0.31" stop-color="#F4D576"/>
+<stop offset="0.37" stop-color="#F8E881"/>
+<stop offset="0.4" stop-color="#F2DF7B"/>
+<stop offset="0.45" stop-color="#E7C969"/>
+<stop offset="0.48" stop-color="#E3C263"/>
+<stop offset="0.54" stop-color="#F0D35A"/>
+<stop offset="0.58" stop-color="#F9DF58"/>
+<stop offset="0.62" stop-color="#EFD052"/>
+<stop offset="0.69" stop-color="#DBB640"/>
+<stop offset="0.74" stop-color="#D2AA38"/>
+<stop offset="0.79" stop-color="#C69930"/>
+<stop offset="0.84" stop-color="#C1932D"/>
+<stop offset="0.85" stop-color="#C59833"/>
+<stop offset="0.88" stop-color="#D2A744"/>
+<stop offset="0.9" stop-color="#EAC565"/>
+<stop offset="0.93" stop-color="#DCB755"/>
+<stop offset="0.95" stop-color="#D5AF4C"/>
+<stop offset="0.97" stop-color="#CBA542"/>
+</linearGradient>
+<clipPath id="clip0_639_21731">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+<g clip-path="url(#clip0_639_21731)">
+<path d="M3.91754 2.37959L17.6003 8.73188C17.8426 8.84319 18.048 9.0217 18.1919 9.24623C18.3359 9.47076 18.4124 9.73188 18.4124 9.99859C18.4124 10.2653 18.3359 10.5264 18.1919 10.751C18.048 10.9755 17.8426 11.154 17.6003 11.2653L3.91754 17.6101C3.66527 17.728 3.38349 17.7676 3.1085 17.7238C2.83352 17.6801 2.57794 17.555 2.37471 17.3646C2.17148 17.1743 2.0299 16.9275 1.96823 16.6559C1.90657 16.3844 1.92763 16.1006 2.02871 15.8412L4.28106 9.9911L2.02871 4.141C1.92763 3.88155 1.90657 3.59778 1.96823 3.32625C2.0299 3.05473 2.17148 2.80789 2.37471 2.61756C2.57794 2.42723 2.83352 2.30213 3.1085 2.25838C3.38349 2.21463 3.66527 2.25424 3.91754 2.3721L3.91754 2.37959Z" fill="url(#paint0_linear_639_21731)"/>
+</g>
+</svg>

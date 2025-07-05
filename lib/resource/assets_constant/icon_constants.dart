@@ -101,4 +101,37 @@ class IconConstants {
       'lib/resource/assets_resources/icons/ic_refresh_today.svg';
   static const String ic_close_gradient =
       'lib/resource/assets_resources/icons/ic_close_gradient.png';
+  static const String ic_warning_date_view =
+      'lib/resource/assets_resources/icons/ic_warning_date_view.png';
+  static const String ic_female_avatar =
+      'lib/resource/assets_resources/icons/ic_female_avatar.svg';
+  static const String ic_male_avatar =
+      'lib/resource/assets_resources/icons/ic_male_avatar.svg';
+  static const String ic_dad_avatar =
+      'lib/resource/assets_resources/icons/ic_dad_avatar.svg';
+  static const String ic_calendar_gradient =
+      'lib/resource/assets_resources/icons/ic_calendar_gradient.svg';
+  static const String ic_tick_active_gradient =
+      'lib/resource/assets_resources/icons/ic_tick_active_gradient.svg';
+  static const String ic_bmb_date_active =
+      'lib/resource/assets_resources/icons/ic_bmb_date_active.svg';
+  static const String ic_tick_inactive_gradient =
+      'lib/resource/assets_resources/icons/ic_tick_inactive_gradient.svg';
+  static const String ic_pick_date =
+      'lib/resource/assets_resources/icons/ic_pick_date.svg';
+  static const String ic_arrow_down_gradient =
+      'lib/resource/assets_resources/icons/ic_arrow_down_gradient.svg';
+  static const String ic_radio_inactive =
+      'lib/resource/assets_resources/icons/ic_radio_inactive.svg';
+  static const String ic_radio_active =
+      'lib/resource/assets_resources/icons/ic_radio_active.svg';
+  static const String ic_forward_gradient =
+      'lib/resource/assets_resources/icons/ic_forward_gradient.svg';
+  static const String ic_time_gradient =
+      'lib/resource/assets_resources/icons/ic_time_gradient.svg';
+  static const String ic_btn_dainam =
+      'lib/resource/assets_resources/icons/ic_btn_dainam.svg';
+  static const String ic_dai_nam_gradient =
+      'lib/resource/assets_resources/icons/ic_dai_nam_gradient.png';
+  
 }

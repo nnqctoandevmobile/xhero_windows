@@ -154,13 +154,13 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
     });
 
     final url = Uri.parse(
-      'https://apis-dev.xheroapp.com/calendars?isOnlyGetDataFromMonthYear=false',
+      'https://apis-dev.xheroapp.com/calendars?date=$time&isOnlyGetDataFromMonthYear=false',
     );
 
     final response = await http.get(url);
     printConsole('Status code: ${response.statusCode}');
     printConsole('Raw response body: ${response.body}');
-    printConsole('URl: ${response.body}');
+    printConsole('URl: _getCalendar');
 
     if (response.statusCode == 200) {
       try {
@@ -213,12 +213,12 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
     printConsole(yearRE.toString());
     printConsole(monthRE.toString());
     final url = Uri.parse(
-      'https://apis-dev.xheroapp.com/calendars?isOnlyGetDataFromMonthYear=false',
+      'https://apis-dev.xheroapp.com/calendars?date=$time&isOnlyGetDataFromMonthYear=false',
     );
     final response = await http.get(url);
     printConsole('Status code: ${response.statusCode}');
     printConsole('Raw response body: ${response.body}');
-    printConsole('URl: ${response.body}');
+    printConsole('URl: _reGetCalendar');
 
     if (response.statusCode == 200) {
       try {
@@ -640,7 +640,6 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
           ),
           body: Column(
             children: [
-              // _actionsHeader(context),
               Expanded(
                 child: CustomRefreshIndicator(
                   builder: MaterialIndicatorDelegate(
@@ -2811,7 +2810,7 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
                                                 ],
                                               ),
                                             )
-                                          : const SizedBox(height: 17,),
+                                          : const SizedBox(height: 17),
                                     ],
                                   ),
                                 ),
@@ -3080,7 +3079,7 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
                     ),
                   )
                 : Center(
-                  child: Padding(
+                    child: Padding(
                       padding: const EdgeInsets.only(left: 12),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -3106,9 +3105,9 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
                             child: RichText(
                               text: TextSpan(
                                 text: '${'death_hours'.tr}: ',
-                                style: TextAppStyle().normalTextStyle().copyWith(
-                                  fontSize: 14.0,
-                                ),
+                                style: TextAppStyle()
+                                    .normalTextStyle()
+                                    .copyWith(fontSize: 14.0),
                                 children: [
                                   TextSpan(
                                     text:
@@ -3125,7 +3124,7 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
                         ],
                       ),
                     ),
-                ),
+                  ),
             const SizedBox(height: 8),
             isLoadingDetailsOfDay
                 ? Padding(
@@ -3151,7 +3150,7 @@ class _AuspicoiusDayScreenState extends State<AuspicoiusDayScreen> {
                 : Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
 
                       children: [
                         Container(

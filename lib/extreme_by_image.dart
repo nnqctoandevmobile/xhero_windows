@@ -11,9 +11,11 @@ import 'dart:math' as math;
 
 import 'package:xhero_windows_app/constants/colors.dart';
 
+import 'utils/logic/xhero_common_logics.dart';
+
 class ExtremeByImage extends StatefulWidget {
-  final String filePath;
-  const ExtremeByImage({super.key, required this.filePath});
+  final String fileUrl;
+  const ExtremeByImage({super.key, required this.fileUrl});
 
   @override
   State<ExtremeByImage> createState() => _ExtremeByImageState();
@@ -114,8 +116,8 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                       _rotationForImage *
                       3.14159 /
                       180, // Convert degrees to radians
-                  child: Image.file(
-                    File(widget.filePath),
+                  child: Image.network(
+                    widget.fileUrl,
                     fit: BoxFit.contain,
                     width: double.infinity,
                     height: double.infinity,
@@ -174,7 +176,7 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                         ),
                       ),
                     ),
-                
+
                     Padding(
                       padding: const EdgeInsets.only(left: 0.75),
                       child: Image.asset(
@@ -402,8 +404,6 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [0, 90, 180, 270, 360].map((angle) {
-                            final bool isSelected =
-                                (_rotationForImage.toInt() == angle);
                             return GestureDetector(
                               onTap: () {
                                 setState(() {
@@ -444,7 +444,7 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                       ),
                     ),
                   ),
-                  spaceVertical(Platform.isIOS ? 32 : 24),
+                  spaceVertical(24),
                   // RangeSlider for rotation
                   // Padding(
                   //   padding:
@@ -727,9 +727,9 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
 
                             final directory =
                                 await getApplicationDocumentsDirectory();
-                            final filePath =
+                            final fileUrl =
                                 '${directory.path}/screenshot_${DateTime.now().millisecondsSinceEpoch}.png';
-                            final imageFile = File(filePath);
+                            final imageFile = File(fileUrl);
                             await imageFile.writeAsBytes(pngBytes);
 
                             /// Bây giờ bạn có thể chia sẻ ảnh:
@@ -737,7 +737,7 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                               XFile(imageFile.path),
                             ], text: 'Lập cực từ Xhero');
                           } catch (e) {
-                            print('Chụp ảnh lỗi: $e');
+                            printConsole('Chụp ảnh lỗi: $e');
                           }
                         },
                         child: Container(
@@ -754,17 +754,16 @@ class _ExtremeByImageState extends State<ExtremeByImage> {
                             ),
                           ),
                           child: Transform.rotate(
-  angle: 1 * 3.14159 / 180, // Hoặc: math.pi
-  child: Icon(
-    CupertinoIcons.share,
-    color: AppColor.primaryColor,
-    size: 28,
-  ),
-),
-
+                            angle: 1 * 3.14159 / 180, // Hoặc: math.pi
+                            child: Icon(
+                              CupertinoIcons.share,
+                              color: AppColor.primaryColor,
+                              size: 28,
+                            ),
+                          ),
                         ),
                       ),
-                         spaceHorizontal(6),
+                      spaceHorizontal(6),
                       InkWell(
                         onTap: () {
                           setState(() {
